@@ -1,11 +1,12 @@
 import React from 'react';
+import Searchbar from './components/SearchBar';
 
 
 const App: React.FC = () => {
   
   return (
     <div>
-      hello word
+      <Searchbar />
     </div>
   )
 }
