@@ -9,7 +9,7 @@ module.exports = (env,argv) => {
         mode: modeEnv,
         entry: ["@babel/polyfill", "./src/index.tsx"],
         output: {
-            path: path.resolve(__dirname, 'dist'),
+            path: path.resolve(__dirname, 'dist/'),
             filename: "[name].[hash].js",
 
         },
@@ -17,7 +17,9 @@ module.exports = (env,argv) => {
             extensions: [".ts", ".tsx", ".js"]
         },
         devServer: {
-            port: 3000
+            port: 8000,
+            contentBase: __dirname + 'dist',
+            watchContentBase: true
         },
         plugins: [
             new HtmlWebpackPlugin({ template: "./public/index.html" }),
@@ -39,7 +41,7 @@ module.exports = (env,argv) => {
                     use: { loader: "ts-loader" }
                 },
                 {
-                    test: /\.m?js$/,
+                    test: /\.js$/,
                     exclude: /node_modules/,
                     use: {
                         loader: "babel-loader",
