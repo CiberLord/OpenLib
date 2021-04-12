@@ -9,16 +9,18 @@ module.exports = (env,argv) => {
         mode: modeEnv,
         entry: ["@babel/polyfill", "./src/index.tsx"],
         output: {
-            path: path.resolve(__dirname, 'dist/'),
+            path: path.resolve(__dirname, 'dist'),
             filename: "[name].[hash].js",
 
         },
         resolve: {
             extensions: [".ts", ".tsx", ".js"]
         },
+        devtool: 'source-map',
         devServer: {
             port: 8000,
             contentBase: __dirname + 'dist',
+            hot: true,
             watchContentBase: true
         },
         plugins: [
@@ -41,7 +43,7 @@ module.exports = (env,argv) => {
                     use: { loader: "ts-loader" }
                 },
                 {
-                    test: /\.js$/,
+                    test: /\.m?js$/,
                     exclude: /node_modules/,
                     use: {
                         loader: "babel-loader",
