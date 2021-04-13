@@ -99,4 +99,7 @@
     .modal-layout__text{
         padding-top: 0px;
     }
+    .additional>a{
+        font-size: 10px;
+    }
 }

@@ -1,4 +1,5 @@
-export const SEARCH_ACTION = "SEARCH_ACTION"; //тип экшена - поиск книг 
+export const SEARCH_ACTION = "SEARCH_ACTION"; //тип экшена - поиск книг
+export const ISLOAD_ACTION = "ISLOAD";
 
 //тип элементов котоыре будут находится в searchResult[]
 export interface SnippetItem {
@@ -7,10 +8,15 @@ export interface SnippetItem {
   publishDate: string;
   isbn: string;
   iconUrl: string;
+  publisher: string;
+  url: string;
 }
 
 //экшен поиска
-export type SearchAction = {
+export interface SearchAction {
   type: string;
   payload: any;
+}
+export interface LoadAction extends SearchAction{
+  payload: boolean;
 }

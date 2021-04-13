@@ -1,9 +1,14 @@
 export const FILTER = 'FILTER';
 
-export const filters = ['All', 'title', 'author'];
+export const filters: string[] = ['All', 'title', 'author'];
 
+export const FilterType = {
+  "All": "q",
+  "title": "title",
+  "author":"author"
+}
 
 export interface FilterAction{
-  type: String;
-  payload: String;
+  type: string;
+  payload: string;
 }
