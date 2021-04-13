@@ -7,6 +7,8 @@ interface MProp extends IProps {
   isbn?: string;
   date?: string;
   href?: string;
+  publisher?: string;
+  url?: string;
 }
 const ModalLayout: React.FC<MProp> = (props: MProp) => {
 
@@ -28,12 +30,13 @@ const ModalLayout: React.FC<MProp> = (props: MProp) => {
           <div className="modal-layout__text">
             <h2>{props.title}</h2>
             <p className="author">author: <span>{props.author}</span></p>
+            <p className="author">publisher: <span>{props.publisher}</span></p>
             <p className="publish-date">date of publish: <span>{props.date}</span></p>
             <p className="isbn">ISBN: {props.isbn}</p>
           </div>
         </div>
         <div className="additional">
-          {props.href && <a href={ props.href}>ссылка на openlib</a>}
+          Open in OpenLibrary <a href={props.url}>{ props.url}</a>
         </div>
         <button className="modal-close" onClick={closeHandler}>Close</button>
       </div>

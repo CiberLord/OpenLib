@@ -1,13 +1,11 @@
-import { FILTER, FilterAction, filters } from "../../types/filter";
+import { FILTER, FilterAction,FilterType } from "../../types/filter";
 
 
-const initialState: String = filters[0];
+const initialState: string = FilterType['All'];
 
-export const filterReducer = (state: String = initialState, action: FilterAction):String => {
+export const filterReducer = (state: string = initialState, action: FilterAction):string => {
   if (action.type === FILTER) {
-    
-    /* КОСТЫЛЬ  */
-    return (action.payload === 'All') ? 'q' : action.payload;
+    return action.payload;
   }
   return state;
 }
