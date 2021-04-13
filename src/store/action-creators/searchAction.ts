@@ -9,7 +9,7 @@ const searchUrl = "http://openlibrary.org/search.json?";
   sWord - слово из поисковой строки
   filter - фильтр поиска (поиск по всем, поиск по названиям, поиск по автору)
 */
-export const fetchSearch = (sWord: string, filter: string = 'q') => {
+export const fetchSearch = (sWord: string, filter: String = 'q') => {
   return async (dispatch: Dispatch<SearchAction>) => {
     try {
       const url = searchUrl + filter + "=" + sWord;
