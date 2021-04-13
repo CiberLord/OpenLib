@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAction } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import Item from './Item';
 
@@ -8,7 +9,7 @@ import Item from './Item';
 const SnippetList: React.FC = () => {
   
   const snippet = useTypedSelector(state => state.searchResults);
-  
+  const { setModalVisible } = useAction();
   const list = snippet.map((value, index) => {
     return (
       <Item
@@ -16,6 +17,9 @@ const SnippetList: React.FC = () => {
         title={value.title}
         author={value.author}
         iconUrl={value.iconUrl}
+        onClick={() => {
+          setModalVisible(true);
+        }}
       />
       )
   })
