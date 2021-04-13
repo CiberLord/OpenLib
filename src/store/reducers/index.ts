@@ -5,7 +5,7 @@ import {searchReducer} from './searchReducer';
 //комбайнер всех редюсеров
 export const rootReducer = combineReducers({
   searchResults: searchReducer,
-  isModal:modalReducer
+  modalState:modalReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>
