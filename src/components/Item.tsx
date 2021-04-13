@@ -1,9 +1,9 @@
 import React, { MouseEventHandler } from 'react';
 
 export interface IProps{
-  title: string;
-  author: string;
-  iconUrl: string;
+  title?: string;
+  author?: string;
+  iconUrl?: string;
   onClick?: MouseEventHandler
 }
 /*
