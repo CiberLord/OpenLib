@@ -1,5 +1,7 @@
 import { SnippetItem, SearchAction, SEARCH_ACTION } from "../../types/search";
 
+
+const maxLen = 100;
 /*
     редюсер срабатывающей после загрузки результатов поиска книг
     возвращает состояние списка  книг
@@ -10,7 +12,7 @@ export const searchReducer = (state: SnippetItem[] = InitialState, action: Searc
   if (action.type === SEARCH_ACTION) {
     const docs = action.payload.docs //результаты поиска хранятся в массиве json.docs (json - ответ с сервера)
     let tmp: SnippetItem[] = []; 
-    for (let i = 0; i < Math.min(10, docs.length); i++) {
+    for (let i = 0; i < Math.min(maxLen, docs.length); i++) {
 
       //ответ с сервера не всегда корректен и не возвращает одни и те же данные для каких то книг отстутсвует какой тоиз параметров, 
       //при отстуствии присваевается пустая строка
