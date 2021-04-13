@@ -9,7 +9,7 @@ import Item from './Item';
 const SnippetList: React.FC = () => {
   
   const snippet = useTypedSelector(state => state.searchResults);
-  const { setModalVisible } = useAction();
+  const { setModalVisible, setSnippetKey } = useAction();
   const list = snippet.map((value, index) => {
     return (
       <Item
@@ -18,6 +18,7 @@ const SnippetList: React.FC = () => {
         author={value.author}
         iconUrl={value.iconUrl}
         onClick={() => {
+          setSnippetKey(index);
           setModalVisible(true);
         }}
       />
