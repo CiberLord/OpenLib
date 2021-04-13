@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
-
+export interface IProps{
+  title: string;
+  author: string;
+  iconUrl: string;
+  onClick?: MouseEventHandler
+}
 /*
   Комонент отображение одного сниппета 
 */
-const Item: React.FC<{ title?: string, author?: string,iconUrl?:string}> = (props) => {
+const Item: React.FC<IProps> = (props: IProps) => {
   return (
-    <div className="item"> 
+    <div className="item" onClick={props.onClick}> 
       <div>
         <img className="book-icon" src={props.iconUrl} alt=""/>
       </div>
