@@ -1,4 +1,6 @@
 import React, { MouseEventHandler } from 'react';
+import '../styles/item.css';
+
 
 export interface IProps{
   title?: string;
@@ -12,7 +14,7 @@ export interface IProps{
 const Item: React.FC<IProps> = (props: IProps) => {
   return (
     <div className="item" onClick={props.onClick}> 
-      <div>
+      <div className="item-img-wrapper">
         <img className="book-icon" src={props.iconUrl} alt=""/>
       </div>
       <div className="item-text">

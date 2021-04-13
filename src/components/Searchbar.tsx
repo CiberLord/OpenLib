@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useAction } from '../hooks/useActions';
-
+import '../styles/searchbar.css';
 
 let timerid: any | number = null;
 
@@ -10,16 +10,20 @@ let timerid: any | number = null;
 const Searchbar: React.FC = () => {
   const { fetchSearch } = useAction();
 
+  React.useEffect(() => {
+    fetchSearch("java");
+  },[])
   // событие которое сработывате при каждом вводе символа в поисковую строку, просихдит сброс таймера поиска, запускается новый таймер который иницирует поиск чрез 1 секунду
   const changeHandler = (event: React.ChangeEvent) => {
     let target = event.target as HTMLInputElement;
-    
+
     clearTimeout(timerid);
     //инициация новой загрузки через 1 секунду
     timerid = setTimeout(() => {
       fetchSearch(target.value);
-    },900)
+    }, 900)
   }
+
   const searchHandler = (event: any) => {
 
     setTimeout(() => {
@@ -28,10 +32,8 @@ const Searchbar: React.FC = () => {
   }
   return (
     <div className="search-bar">
-      <div>
-        <input type="text" onChange={changeHandler} />
-        <button className="search-button" onClick={searchHandler}>search</button>
-      </div>
+      <input type="text" onChange={changeHandler} className="search-bar__input" />
+      <button className="search-bar__button" onClick={searchHandler}></button>
     </div>
   )
 }

@@ -16,7 +16,7 @@ const SnippetList: React.FC = () => {
         key={index}
         title={value.title}
         author={value.author}
-        iconUrl={value.iconUrl}
+        iconUrl={value.iconUrl+"-S.jpg"}
         onClick={() => {
           setSnippetKey(index);
           setModalVisible(true);
