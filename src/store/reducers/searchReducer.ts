@@ -15,11 +15,11 @@ export const searchReducer = (state: SnippetItem[] = InitialState, action: Searc
       //ответ с сервера не всегда корректен и не возвращает одни и те же данные для каких то книг отстутсвует какой тоиз параметров, 
       //при отстуствии присваевается пустая строка
 
-      let author = (docs[i].author_name) ? docs[i].author_name[0] : "";
-      let title = (docs[i].title)?docs[i].title:"";
+      let author = (docs[i].author_name) ? docs[i].author_name[0] : "none";
+      let title = (docs[i].title)?docs[i].title:"None";
       let publishDate = (docs[i].publish_date) ? docs[i].publish_date[0] : (docs[i].publish_year) ? docs[i].publish_year[0]:"";
       let isbn = (docs[i].isbn) ? docs[i].isbn[0] : "";
-      let iconUrl = "http://covers.openlibrary.org/b/isbn/"+isbn+"-S.jpg"
+      let iconUrl = "http://covers.openlibrary.org/b/isbn/" + isbn;
       tmp.push({
         author,title,publishDate,isbn,iconUrl
       });
