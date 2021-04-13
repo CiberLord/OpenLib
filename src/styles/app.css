@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.app{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.navbar{
+    padding: 30px 20px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    position: sticky;
+    top: 0px;
+    background-color: #4527a0;
+    box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
+    margin-bottom: 30px;
+}
+.navbar>.logo{
+    position: absolute;
+    left: 30px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 4px 0;
+    padding-left: 40px;
+    background-image: url(../../public/assets/logo.svg);
+    background-position: 0px center;
+    background-repeat: no-repeat;
+    background-size: 35px;
+    cursor: pointer;
+}
+.book-icon{
+    display: block;
+}
+
+@media (max-width: 480px) {
+    .navbar{
+        padding: 30px 2%;
+    }
+    .navbar>.logo{
+        position: static;
+        margin-bottom: 20px;
+    }
+}
