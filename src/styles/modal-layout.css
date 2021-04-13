@@ -14,14 +14,14 @@
 }
 .modal-layout{
     padding: 20px 20px;
-    min-width: 600px;
     background-color: #fff;
     border-radius: 3px;
+    max-width: 700px;
+    width: 100%;
 }
 .main__info{
     display: flex;
     align-items: start;
-
 }
 .additional{
     padding: 10px 0;
@@ -42,9 +42,11 @@
     object-fit:contain;
     width: 100%;
     height:inherit;
+    margin-bottom: 20px;
 }
 .modal-layout__text{
     flex-grow: 1;
+    padding-top: 20px;
 }
 .modal-layout__text>h2{
     font-size: 22px;
@@ -68,4 +70,33 @@
 .isbn{
     font-size: 14px;
     color: #0277bd;
+}
+
+.modal-close{
+    outline: none;
+    border: none;
+    background-color: #ba68c8;
+    color: #fff;
+    font-size: 15px;
+    float: right;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+.modal-close:hover{
+    background-color: #6a1b9a;
+}
+
+@media(max-width: 768px){
+    .modal-layout{
+        width: 80%;
+        max-width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .main__info{
+        display: block;
+    }
+    .modal-layout__text{
+        padding-top: 0px;
+    }
 }

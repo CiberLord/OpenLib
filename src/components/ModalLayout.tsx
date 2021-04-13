@@ -15,6 +15,9 @@ const ModalLayout: React.FC<MProp> = (props: MProp) => {
   const exitModalLayout = () => {
     setModalVisible(false);
   }
+  const closeHandler = () => {
+    setModalVisible(false);
+  }
   return (
     <div className="wrap__modal-layout" onClick={exitModalLayout}>
       <div className="modal-layout" onClick={(event) => { event.stopPropagation() }}>
@@ -25,13 +28,14 @@ const ModalLayout: React.FC<MProp> = (props: MProp) => {
           <div className="modal-layout__text">
             <h2>{props.title}</h2>
             <p className="author">author: <span>{props.author}</span></p>
-            <p className="publish-date">date of publish: <span>{ props.date}</span></p>
+            <p className="publish-date">date of publish: <span>{props.date}</span></p>
             <p className="isbn">ISBN: {props.isbn}</p>
           </div>
         </div>
         <div className="additional">
           {props.href && <a href={ props.href}>ссылка на openlib</a>}
         </div>
+        <button className="modal-close" onClick={closeHandler}>Close</button>
       </div>
     </div>
   )
