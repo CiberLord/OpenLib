@@ -17,6 +17,8 @@ export interface SearchAction {
   type: string;
   payload: any;
 }
+
+//экшен состояни загрузки
 export interface LoadAction extends SearchAction{
   payload: boolean;
 }
