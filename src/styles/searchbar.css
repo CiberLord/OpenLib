@@ -75,6 +75,26 @@
 .filter-item:hover{
     background: rgb(196, 196, 196);
 }
+
+.f_anim-enter{
+    opacity: 0;
+    transform: scale(0.9);
+    transition:all .3s;
+}
+.f_anim-enter-active{
+    opacity: 1;
+    transform: scale(1);
+}
+.f_anim-exit{
+    opacity: 1;
+    transform: scale(1);
+    transition:all .3s;
+}
+.f_anim-exit-active{
+    opacity: 0;
+    transform: scale(0.9);
+}
+
 @media (max-width: 1200px) {
     .search-bar {
         width: 400px;
